@@ -35,7 +35,7 @@ module ViewPartialFormBuilder
         return_value = attributes.public_send(method_name, *arguments, &block)
 
         if return_value.kind_of?(Hash)
-          HtmlAttributes.new(return_value)
+          HtmlAttributes.new(**return_value)
         else
           return_value
         end
